@@ -1,13 +1,15 @@
 def encrypt_array(message, shift)
+	# require 'date'
+	# shift = Date.today.to_s.split(//).last(2).join("").to_i
 	message_indexes = []
 	encrypted_message = []
 	char1 = ('A'..'z').to_a - ['\\']
 	char2 = ('!'..'!').to_a
 	char3 = ('#'..'?').to_a
 	char_arr = char1 + char2 + char3
-    seed = 1
-	char_arr = char_arr.shuffle(random: Random.new(seed)) 
-	message = message.split("")
+    # seed = 1
+	# char_arr = char_arr.shuffle(random: Random.new(seed)) 
+	message = message.split(//)
 	message.each { |element| element 
 		if element == " "
 			message_indexes.push(element)
@@ -35,15 +37,17 @@ def encrypt_array(message, shift)
 	encrypted_message = encrypted_message.join
 end		
 def decrypt_array(message, shift)
+	# require 'date'
+	# shift = Date.today.to_s.split(//).last(2).join("").to_i
 	message_indexes = []
 	decrypted_message = []
 	char1 = ('A'..'z').to_a - ['\\']
 	char2 = ('!'..'!').to_a
 	char3 = ('#'..'?').to_a
 	char_arr = char1 + char2 + char3
-    seed = 1
-	char_arr = char_arr.shuffle(random: Random.new(seed))
-	message = message.split("")
+    # seed = 1
+	# char_arr = char_arr.shuffle(random: Random.new(seed))
+	message = message.split(//)
 	message.each { |element| element 
 		if element == " "
 			message_indexes.push(element)
