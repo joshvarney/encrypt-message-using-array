@@ -1,6 +1,6 @@
 require "minitest/autorun"
 require_relative "encrypt_array.rb"
-class Test_Encrypt_hash < Minitest::Test 
+class Test_Encrypt_array < Minitest::Test 
 
 	# def test_that_returns_string_with_shuffle1
 	# 	assert_equal("OdIIa", encrypt_array("Hello", 5))
