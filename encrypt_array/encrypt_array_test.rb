@@ -2,6 +2,31 @@ require "minitest/autorun"
 require_relative "encrypt_array.rb"
 class Test_Encrypt_array < Minitest::Test 
 
+	
+	def test_that_returns_string1
+		assert_equal("Mjqqt", encrypt_array("Hello"))
+	end
+	def test_that_returns_back_to_original2
+		assert_equal("Hello", decrypt_array("Mjqqt"))
+	end
+	def test_that_returns_string13
+		assert_equal("ABCDE", encrypt_array(";<=>?"))
+	end
+	def test_that_returns_string4
+		assert_equal("&%$", encrypt_array("zyx"))
+	end
+	def test_that_returns_right_letters5
+		assert_equal("msbokA", encrypt_array("hn]jf;"))
+	end	
+	def test_that_returns_right_letters_again6
+		assert_equal("K9O6Rl", encrypt_array("F4J1Mg"))
+	end
+	def test_that_returns_message_back7
+		assert_equal("bciWea", decrypt_array("ghn]jf"))
+	end
+	def test_that_returns_message_back_again8
+		assert_equal("6w):u'", decrypt_array(";#.?z,"))
+	end
 	# def test_that_returns_string_with_shuffle1
 	# 	assert_equal("OdIIa", encrypt_array("Hello", 5))
 	# end
@@ -26,28 +51,4 @@ class Test_Encrypt_array < Minitest::Test
 	# def test_that_returns_message_back_again_with_shuffle8
 	# 	assert_equal("hn]jf;", decrypt_array(";#.?z,", 5))
 	# end
-	def test_that_returns_string1
-		assert_equal("Mjqqt", encrypt_array("Hello", 5))
-	end
-	def test_that_returns_back_to_original2
-		assert_equal("Hello", decrypt_array("Mjqqt", 5))
-	end
-	def test_that_returns_string13
-		assert_equal("ABCDE", encrypt_array(";<=>?", 5))
-	end
-	def test_that_returns_string4
-		assert_equal("&%$", encrypt_array("zyx", 5))
-	end
-	def test_that_returns_right_letters5
-		assert_equal("msbokA", encrypt_array("hn]jf;", 5))
-	end	
-	def test_that_returns_right_letters_again6
-		assert_equal("K9O6Rl", encrypt_array("F4J1Mg", 5))
-	end
-	def test_that_returns_message_back7
-		assert_equal("bciWea", decrypt_array("ghn]jf", 5))
-	end
-	def test_that_returns_message_back_again8
-		assert_equal("6w):u'", decrypt_array(";#.?z,", 5))
-	end
 end
