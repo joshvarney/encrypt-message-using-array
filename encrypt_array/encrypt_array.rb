@@ -14,11 +14,11 @@ end
 def message_indexes(message)
 	message_indexes = []
 	message = message.split(//)
-	message.each { |element| element 
+	message.each { |element| 
 		if element == " "
 			message_indexes.push(element)
 		else
-			char_arr.each { |char| char   
+			char_arr.each { |char|
 				if element == char
 					message_indexes.push(char_arr.index(char))
 				end
@@ -29,15 +29,14 @@ def message_indexes(message)
 end
 def encrypt_array(message)
 	encrypted_message = []
-	message_indexes(message).each { |element| element
+	message_indexes(message).each { |element|
 		if element == " "
 			encrypted_message.push(element)
 		else
 			char_arr = char_arr().rotate(shift)	
-			char_arr.each_with_index { |char, char_index| char_index
+			char_arr.each_with_index { |char, char_index|
 				if element == char_index
 					encrypted_message.push(char)
-					char_arr = char_arr.rotate(-shift)
 				end
 			}
 		end
@@ -46,15 +45,14 @@ def encrypt_array(message)
 end		
 def decrypt_array(message)
 	decrypted_message = []
-	message_indexes(message).each { |element| element
+	message_indexes(message).each { |element|
 		if element == " "
 			decrypted_message.push(element)
 		else
 			char_arr = char_arr().rotate(-shift)	
-			char_arr.each_with_index { |char, char_index| char_index
+			char_arr.each_with_index { |char, char_index|
 				if element == char_index
 					decrypted_message.push(char)
-					char_arr = char_arr.rotate(shift)
 				end
 			}
 		end
